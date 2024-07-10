@@ -1,3 +1,5 @@
 <div>
-    Hello Youtube.
+    <button wire:click='handleClick'>
+        Click me
+    </button>
 </div>
