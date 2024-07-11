@@ -33,6 +33,8 @@ class MyForm extends Component
 
         $this -> reset();
         // $this -> reset(["password"]); // if you want to reset password only
+
+        request() -> session() -> flash("success", "User created successfully");
     }
 
     public function render()
