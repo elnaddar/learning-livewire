@@ -5,9 +5,12 @@ namespace App\Livewire;
 use App\Models\User;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class MyForm extends Component
 {
+    use WithPagination;
+    
     #[Rule("required|min:2|max:50")]
     public $name;
     #[Rule("required|email|unique:users")]
@@ -33,13 +36,11 @@ class MyForm extends Component
 
         $this -> reset();
         // $this -> reset(["password"]); // if you want to reset password only
-
-        request() -> session() -> flash("success", "User created successfully");
     }
 
     public function render()
     {
-        $users = User::all();
+        $users = User::paginate(3);
         return view('livewire.my-form', ['users'=> $users]);
     }
 }

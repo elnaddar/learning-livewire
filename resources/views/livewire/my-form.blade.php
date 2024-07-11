@@ -2,11 +2,6 @@
     <h1
         class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Form</h1>
-    @if (session('success'))
-        <div class="w-100 rounded p-3 bg-green-500 m-4">
-            {{ session('success') }}
-        </div>
-    @endif
     <form class="p-5" wire:submit='createNewUser' action="">
         <input class="block rounded border border-gray-300 px-3 py-1 mb-1" wire:model='name' type="type"
             placeholder="name..">
@@ -37,4 +32,5 @@
             </li>
         @endforeach
     </ol>
+    {{ $users->links() }}
 </div>
