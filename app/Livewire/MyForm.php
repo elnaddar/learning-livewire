@@ -30,6 +30,9 @@ class MyForm extends Component
             "email"=> $this->email,
             "password"=> bcrypt($this->password),
         ]);
+
+        $this -> reset();
+        // $this -> reset(["password"]); // if you want to reset password only
     }
 
     public function render()
