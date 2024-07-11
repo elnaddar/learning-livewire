@@ -15,5 +15,7 @@
     <body class="antialiased">
         {{-- @livewire('clicker') --}}
         <livewire:clicker/>
+        <hr>
+        @livewire('my-form')
     </body>
 </html>
