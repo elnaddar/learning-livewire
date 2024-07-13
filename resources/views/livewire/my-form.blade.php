@@ -33,12 +33,14 @@
     <ol class="list-decimal">
         @foreach ($users as $user)
             <li>
-                @if ($user->image)
-                    <img src="{{ asset('storage/' . $user->image) }}">
-                @endif
-                <div>
-                    <h3>{{ $user->name }}</h3>
-                    <p>{{ $user->email }}</p>
+                <div class="flex items-center">
+                    @if ($user->image)
+                        <img class="w-10 h-10 mr-2 rounded" src="{{ asset('storage/' . $user->image) }}">
+                    @endif
+                    <div>
+                        <h3>{{ $user->name }}</h3>
+                        <p>{{ $user->email }}</p>
+                    </div>
                 </div>
             </li>
         @endforeach
