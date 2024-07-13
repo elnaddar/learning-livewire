@@ -34,7 +34,7 @@
         @foreach ($users as $user)
             <li>
                 @if ($user->image)
-                    <img src="{{ $user->image }}">
+                    <img src="{{ asset('storage/' . $user->image) }}">
                 @endif
                 <div>
                     <h3>{{ $user->name }}</h3>
