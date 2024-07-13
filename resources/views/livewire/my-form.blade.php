@@ -33,8 +33,13 @@
     <ol class="list-decimal">
         @foreach ($users as $user)
             <li>
-                <h3>{{ $user->name }}</h3>
-                <p>{{ $user->email }}</p>
+                @if ($user->image)
+                    <img src="{{ $user->image }}">
+                @endif
+                <div>
+                    <h3>{{ $user->name }}</h3>
+                    <p>{{ $user->email }}</p>
+                </div>
             </li>
         @endforeach
     </ol>
