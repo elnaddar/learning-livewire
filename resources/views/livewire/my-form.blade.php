@@ -21,10 +21,13 @@
         @enderror
 
         <input wire:model='image' accept="image/png image/jpeg" type="file"
-            class="block w-full text-sm bg-gray-900 rounded ring-1 ring-inset ring-gray-300">
+            class="block p-2 mb-2 text-sm bg-gray-300 rounded ring-1 ring-inset ring-gray-900">
         @error('image')
             <div class="text-xs text-red-500">{{ $message }}</div>
         @enderror
+        @if ($image)
+            <img class="w-20 h-20 mb-2 rounded" src="{{ $image->temporaryUrl() }}">
+        @endif
 
         <input class="block px-3 py-1 text-white bg-gray-400 rounded hover:bg-gray-600"type="submit" value="submit">
     </form>
