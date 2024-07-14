@@ -30,6 +30,9 @@
         @endif
 
         <input class="block px-3 py-1 text-white bg-gray-400 rounded hover:bg-gray-600"type="submit" value="submit">
+        <div wire:loading>
+            Loading....
+        </div>
     </form>
     <hr>
     <h2 class="text-4xl font-extrabold dark:text-white">All Users: {{ count($users) }}</h2>
