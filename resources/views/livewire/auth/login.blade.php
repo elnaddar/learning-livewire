@@ -14,6 +14,13 @@
                 <span>{{ $message }}</span>
             @enderror
         </div>
+        <div>
+            <input type="checkbox" id="remember" wire:model="remember">
+            <label for="remember">Remember Me</label>
+            @error('remember')
+                <span>{{ $message }}</span>
+            @enderror
+        </div>
         <button type="submit">Login</button>
         @if (session()->has('error'))
             <span>{{ session('error') }}</span>
